@@ -1,0 +1,13 @@
+
+# Ignore repo folder and all temporary stuff
+**/.*
+!.gitignore
+
+# Ignore ordinary yocto folders
+**/build-*
+**/downloads
+**/sources
+**/sstate-cache
+
+# Ignore user specific docker file
+Dockerfile.user
