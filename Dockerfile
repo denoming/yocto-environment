@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 # Enable non-interactive mode
 ARG DEBIAN_FRONTEND=noninteractive
@@ -8,17 +8,11 @@ ENV TZ=Europe/Kiev
 
 # Install required packages for the build host
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y gawk wget git diffstat unzip texinfo \
+RUN apt-get install -y gawk wget curl git-core diffstat unzip texinfo lz4 zstd \
     gcc-multilib g++-multilib build-essential chrpath socat cpio \
-    python python-git python-gtk2 \
-    python3 python3-pip python3-git python3-pexpect python3-jinja2 pylint3 \
-    xz-utils debianutils iputils-ping xterm \
-    libegl1-mesa libsdl1.2-dev libstdc++-5-dev libx11-dev libglib2.0-dev
-
-# Install additional tools
-RUN apt-get install -y curl dosfstools mtools parted syslinux tree zip sudo \
-    autoconf automake libtool bsdmainutils screen \
-    bmap-tools docbook-utils xsltproc fop dblatex xmlto
+    python3 python3-pip python3-pexpect python3-git python3-jinja2 python3-subunit python-is-python3 \
+    xz-utils debianutils iputils-ping pylint3 xterm \
+    mesa-common-dev libegl1-mesa libsdl1.2-dev
 
 # Install "repo" tool (used by many Yocto-based projects)
 RUN curl -o /usr/local/bin/repo http://storage.googleapis.com/git-repo-downloads/repo && chmod a+x /usr/local/bin/repo

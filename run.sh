@@ -15,7 +15,7 @@ if [ "$2" != "" ]; then
     DOCKER_FILE=$1
 fi
 
-DOCKER_IMAGE=my/yocto:latest
+DOCKER_IMAGE=my/yocto
 if [ "$3" != "" -a "$DOCKER_FILE" = "Dockerfile" ]; then
     DOCKER_IMAGE=$2
 fi
