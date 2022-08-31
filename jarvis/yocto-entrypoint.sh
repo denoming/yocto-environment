@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-PROJECT_URL=https://github.com/karz0n/pream
+PROJECT_URL=https://github.com/karz0n/jarvis
 
 function sync()
 {
     if [ ! -f $PWD/.init ]; then
-        repo init -u $PROJECT_URL
+        repo init -u $PROJECT_URL -b main
         repo sync -j $(nproc)
         touch $PWD/.init
     fi
@@ -13,7 +13,6 @@ function sync()
 
 sync
 
-export TEMPLATECONF=$PWD/sources/meta-pream/conf/variant/x86_64
+export TEMPLATECONF=$PWD/sources/meta-jarvis/conf/variant/x86_64
 source sources/poky/oe-init-build-env build-qemu
-
 bash
