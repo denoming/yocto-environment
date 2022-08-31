@@ -34,6 +34,9 @@ fi
 if [ -e $HOME/.wgetrc ]; then
     CREDENTIAL_VOLUMES="${CREDENTIAL_VOLUMES} -v ${HOME}/.wgetrc:${HOME}/.wgetrc"
 fi
+if [ -e $HOME/.ssh ]; then
+    CREDENTIAL_VOLUMES="${CREDENTIAL_VOLUMES} -v ${HOME}/.ssh:${HOME}/.ssh"
+fi
 
 # Setup ssh-agent
 eval $(ssh-agent)
