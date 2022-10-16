@@ -8,7 +8,7 @@ ENV TZ=Europe/Kiev
 
 # Install required packages for the build host
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y gawk wget curl git git-lfs diffstat unzip texinfo lz4 zstd \
+RUN apt-get install -y vim gawk wget curl git git-lfs diffstat unzip texinfo lz4 zstd \
     gcc-multilib g++-multilib build-essential chrpath socat cpio \
     python3 python3-pip python3-pexpect python3-git python3-jinja2 python3-subunit python-is-python3 \
     xz-utils debianutils iputils-ping pylint3 xterm \
