@@ -13,6 +13,6 @@ function sync()
 
 sync
 
-export TEMPLATECONF=$PWD/sources/meta-jarvis/conf/variant/raspberrypi3-64
+export TEMPLATECONF=${TEMPLATECONF:-$PWD/sources/meta-jarvis/conf/templates/raspberrypi3-64}
 source sources/poky/oe-init-build-env build-rpi3
 bash
