@@ -64,7 +64,8 @@ RUN echo $USER:$USER | chpasswd
 RUN echo '$USER ALL=(ALL) NOPASSWD:SETENV: ALL' > /etc/sudoers.d/$USER || true
 
 USER $USER:$USER
-COPY ./docker-entrypoint.sh /
+COPY docker-entrypoint.sh /
+COPY gitconfig /home/$USER
 ENTRYPOINT ["/docker-entrypoint.sh"]
 EOF
 }
