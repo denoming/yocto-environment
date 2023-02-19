@@ -12,12 +12,12 @@ fi
 
 DOCKER_FILE="Dockerfile"
 if [ "$2" != "" ]; then
-    DOCKER_FILE=$1
+    DOCKER_FILE=$2
 fi
 
 DOCKER_IMAGE=my/yocto
 if [ "$3" != "" -a "$DOCKER_FILE" = "Dockerfile" ]; then
-    DOCKER_IMAGE=$2
+    DOCKER_IMAGE=$3
 fi
 
 # Setup credential volumes
