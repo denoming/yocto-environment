@@ -1,0 +1,7 @@
+FROM crops/extsdk-container
+
+USER root
+
+# Install required packages for the build host
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y git-lfs
