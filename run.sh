@@ -82,10 +82,12 @@ function buildImage()
         $BUILD_CMD
     fi
 
-    echo "Building - ${DOCKER_IMAGE}-user"
-    BUILD_CMD="docker build --ssh default -t $DOCKER_IMAGE-user -f Dockerfile.user ."
-    echo $BUILD_CMD
-    $BUILD_CMD
+    if [[ "$(docker images -q ${DOCKER_IMAGE}-user 2> /dev/null)" == "" ]]; then
+        echo "Building - ${DOCKER_IMAGE}-user"
+        BUILD_CMD="docker build --ssh default -t $DOCKER_IMAGE-user -f Dockerfile.user ."
+        echo $BUILD_CMD
+        $BUILD_CMD
+    fi
 }
 
 function runImage()
