@@ -9,5 +9,8 @@
 **/sources
 **/sstate-cache
 
+# Ignore condig folder
+**/config
+
 # Ignore user specific docker file
 Dockerfile.user
